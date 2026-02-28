@@ -4,7 +4,7 @@ const pool = new Pool({
   user: "postgres",
   host: "localhost",
   database: "caresync",
-  password: "SUA_SENHA",
+  password: "0305",
   port: 5432,
 });
 

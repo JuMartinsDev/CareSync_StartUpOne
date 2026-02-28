@@ -1,16 +1,17 @@
-const bcrypt = require("bcrypt");
-const User = require("../models/User");
+const pool = require("../config/db");
 
-class UserController {
-  static async register(req, res) {
-    const { nome, email, senha } = req.body;
+exports.criarUsuario = async (req, res) => {
+  const { nome, email, senha } = req.body;
 
-    const senhaHash = await bcrypt.hash(senha, 10);
+  try {
+    const resultado = await pool.query(
+      "INSERT INTO usuarios (nome, email, senha) VALUES ($1, $2, $3) RETURNING *",
+      [nome, email, senha]
+    );
 
-    const user = await User.create(nome, email, senhaHash);
-
-    res.json(user);
+    res.status(201).json(resultado.rows[0]);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ erro: "Erro ao criar usuário" });
   }
-}
-
-module.exports = UserController;
+};
