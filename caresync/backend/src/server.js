@@ -15,6 +15,9 @@ pool.connect()
 const userRoutes = require("./routes/userRoutes");
 app.use("/users", userRoutes);
 
+const pacienteRoutes = require("./routes/pacienteRoutes");
+app.use("/pacientes", pacienteRoutes);
+
 app.get("/", (req, res) => {
   res.send("API CareSync funcionando!");
 });
