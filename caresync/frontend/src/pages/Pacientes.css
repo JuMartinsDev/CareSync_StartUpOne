@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    linear-gradient(
+      135deg,
+      #f5f1ea,
+      #e7dccb
+    );
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+.pacientes-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 40px 20px;
+}
+
+.pacientes-card {
+  width: 100%;
+  max-width: 900px;
+
+  background: rgba(255,255,255,0.75);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 28px;
+
+  padding: 40px;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.08);
+}
+
+.pacientes-card h2 {
+  text-align: center;
+
+  font-size: 2.4rem;
+
+  color: #4f6f52;
+
+  margin-bottom: 30px;
+}
+
+.paciente-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin-bottom: 35px;
+}
+
+.paciente-form input,
+.paciente-form textarea {
+  padding: 16px;
+
+  border: 1px solid #d7d7d7;
+
+  border-radius: 14px;
+
+  font-size: 1rem;
+
+  background: #fff;
+
+  transition: 0.3s;
+}
+
+.paciente-form textarea {
+  min-height: 110px;
+
+  resize: none;
+}
+
+.paciente-form input:focus,
+.paciente-form textarea:focus {
+  outline: none;
+
+  border-color: #739072;
+
+  box-shadow: 0 0 0 4px rgba(115,144,114,0.15);
+}
+
+.paciente-form button {
+  padding: 16px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #739072;
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.paciente-form button:hover {
+  background: #557153;
+
+  transform: translateY(-2px);
+}
+
+.lista-pacientes {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.paciente-item {
+  background: #fff;
+
+  border-left: 6px solid #739072;
+
+  padding: 22px;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.05);
+
+  transition: 0.3s;
+}
+
+.paciente-item:hover {
+  transform: translateY(-3px);
+}
+
+.paciente-item h3 {
+  color: #4f6f52;
+
+  margin-bottom: 10px;
+
+  font-size: 1.3rem;
+}
+
+.paciente-item p {
+  color: #5f5f5f;
+
+  margin-bottom: 6px;
+
+  line-height: 1.5;
+}
